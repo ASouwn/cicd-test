@@ -1,0 +1,20 @@
+name: deploy test project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install_build:
+    name: install the dependences and build the next.js app
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: install the dependences
+      run: npm run install
+
+    - name: build the next.js app
+      run: npm run build
