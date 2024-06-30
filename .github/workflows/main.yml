@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: install the dependences
-      run: npm run install
+      run: npm install
 
     - name: build the next.js app
       run: npm run build
