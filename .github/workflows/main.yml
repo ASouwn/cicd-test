@@ -18,3 +18,11 @@ jobs:
 
     - name: build the next.js app
       run: npm run build
+
+  deploy_job:
+    name: deploy the project on server
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: connect andd pull
+        run: ssh root@asouwn.xyz "cd /home/cicd-test && git pull production main && npm install && npm run build && pm2 reloade test.config.js"
