@@ -25,7 +25,7 @@ jobs:
   
     steps:
       - name: install ssh pub_keys
-        run: install -m 600 -D /dev/null / ~/.ssh/id_rsa
+        run: install -m 600 -D /dev/null ~/.ssh/id_rsa
       - run: echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
       - run: ssh-keyscan -H "${{secrets.SSH_HOST}}" > ~/.ssh/known_hosts
       - name: connect andd pull
